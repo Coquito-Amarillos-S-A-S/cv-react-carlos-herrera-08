@@ -1,16 +1,29 @@
-# React + Vite
+# CV React - Carlos Herrera (v07)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Evidencia: GA1-220501096-03-AA1-EV07 – Reutilización de componentes en React – Props y desestructuración
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Proyecto de una hoja de vida (CV) dinámica en React. Los datos principales están centralizados en `src/data/cvData.js` y se pasan a componentes reutilizables mediante props. Se aplicó desestructuración y renderizado condicional.
 
-## React Compiler
+## Estructura
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/data/cvData.js`: Datos centrales del CV.
+- `src/components/*`: Componentes reutilizables que reciben props.
+- `src/App.jsx`: Punto de unión donde se pasan las props.
 
-## Expanding the ESLint configuration
+## Cómo ejecutar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Instalar dependencias:
+
+````bash
+npm install
+npm run dev
+
+## Instrucciones para ejecutar
+
+1. Clonar:
+   ```bash
+   git clone https://github.com/Coquito-Amarillos-S-A-S/cv-react-carlos-herrera-07.git
+   cd cv-react-carlos-herrera-07
+````
