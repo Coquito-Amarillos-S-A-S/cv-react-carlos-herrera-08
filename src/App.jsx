@@ -1,34 +1,49 @@
-import { cvData } from "./data/cvData";
+// src/App.jsx
+import React, { useState } from "react";
+import {
+  cabecera,
+  perfil,
+  educacion,
+  experiencia,
+  stackTecnologias as tecnologiasIniciales,
+  proyectos,
+  habilidades,
+} from "./data/cvData";
 
 import CabeceraCV from "./components/CabeceraCV";
 import Perfil from "./components/Perfil";
-import Experiencia from "./components/Experiencia";
 import Educacion from "./components/Educacion";
+import Experiencia from "./components/Experiencia";
 import StackTecnologias from "./components/StackTecnologias";
 import Proyectos from "./components/Proyectos";
-import Habilidades from "./components/Habilidades";
+import ToggleHabilidades from "./components/ToggleHabilidades";
+import FormularioTecnologia from "./components/FormularioTecnologia";
 
-export default function App() {
+function App() {
+  const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
+
+  const agregarTecnologia = (nueva) => {
+    setTecnologias((prev) => [...prev, nueva]);
+  };
+
   return (
-    <div style={{ padding: 20 }}>
-      <CabeceraCV
-        nombre={cvData.cabecera.nombre}
-        cargo={cvData.cabecera.cargo}
-        ciudad={cvData.cabecera.ciudad}
-        contacto={cvData.cabecera.contacto}
-      />
+    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+      <CabeceraCV {...cabecera} />
+      <Perfil {...perfil} />
+      <Educacion estudios={educacion} />
+      <Experiencia trabajos={experiencia} />
 
-      <Perfil resumen={cvData.perfil} />
+      <StackTecnologias tecnologias={tecnologias} />
 
-      <Experiencia experiencias={cvData.experiencia} />
+      {/* Formulario con useState y eventos */}
+      <FormularioTecnologia onAgregar={agregarTecnologia} />
 
-      <Educacion estudios={cvData.educacion} />
+      {/* Botón con estado y renderizado condicional */}
+      <ToggleHabilidades habilidades={habilidades} />
 
-      <StackTecnologias tecnologias={cvData.tecnologias} />
-
-      <Proyectos proyectos={cvData.proyectos} />
-
-      <Habilidades habilidades={cvData.habilidades} />
+      <Proyectos proyectos={proyectos} />
     </div>
   );
 }
+
+export default App;
