@@ -26,13 +26,13 @@ export const educacion = [
     id: 1,
     titulo: "Tecnólogo en Desarrollo de Software",
     institucion: "SENA",
-    año: "2022 - 2024",
+    periodo: "2022 - 2024",
   },
   {
     id: 2,
     titulo: "Curso de React",
     institucion: "Udemy",
-    año: "2024",
+    periodo: "2024",
   },
 ];
 
@@ -58,28 +58,15 @@ export const experiencia = [
 // Tecnologías (datos iniciales)
 // Estas se convierten en estado dinámico dentro de App.jsx
 // ===============================
+// src/data/cvData.js
+
 export const stackTecnologias = [
-  {
-    id: 1,
-    nombre: "HTML",
-    tipo: "frontend",
-  },
-  {
-    id: 2,
-    nombre: "CSS",
-    tipo: "frontend",
-  },
-  {
-    id: 3,
-    nombre: "JavaScript",
-    tipo: "frontend",
-  },
-  {
-    id: 4,
-    nombre: "React",
-    tipo: "frontend",
-  },
+  { id: 1, nombre: "HTML", tipo: "frontend" },
+  { id: 2, nombre: "CSS", tipo: "frontend" },
+  { id: 3, nombre: "JavaScript", tipo: "frontend" },
+  { id: 4, nombre: "React", tipo: "frontend" }
 ];
+
 
 // ===============================
 // Proyectos

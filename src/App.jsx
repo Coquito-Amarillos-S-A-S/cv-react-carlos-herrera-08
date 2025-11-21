@@ -1,5 +1,4 @@
-// src/App.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   cabecera,
   perfil,
@@ -15,30 +14,34 @@ import Perfil from "./components/Perfil";
 import Educacion from "./components/Educacion";
 import Experiencia from "./components/Experiencia";
 import StackTecnologias from "./components/StackTecnologias";
-import Proyectos from "./components/Proyectos";
 import ToggleHabilidades from "./components/ToggleHabilidades";
 import FormularioTecnologia from "./components/FormularioTecnologia";
+import Proyectos from "./components/Proyectos";
+import Habilidades from "./components/Habilidades";
 
 function App() {
   const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
-
   const agregarTecnologia = (nueva) => {
+    // Asegúrate de que nueva tiene { id, nombre, tipo }
     setTecnologias((prev) => [...prev, nueva]);
   };
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <CabeceraCV {...cabecera} />
-      <Perfil {...perfil} />
+    <div style={{ padding: 20 }}>
+      <CabeceraCV
+        nombre={cabecera.nombre}
+        cargo={cabecera.cargo}
+        ciudad={cabecera.ciudad}
+        contacto={cabecera.contacto}
+      />
+      <Perfil resumen={perfil.resumen} />
       <Educacion estudios={educacion} />
-      <Experiencia trabajos={experiencia} />
+      <Experiencia experiencias={experiencia} />
 
       <StackTecnologias tecnologias={tecnologias} />
 
-      {/* Formulario con useState y eventos */}
       <FormularioTecnologia onAgregar={agregarTecnologia} />
 
-      {/* Botón con estado y renderizado condicional */}
       <ToggleHabilidades habilidades={habilidades} />
 
       <Proyectos proyectos={proyectos} />
