@@ -6,7 +6,7 @@ import {
   experiencia,
   stackTecnologias as tecnologiasIniciales,
   proyectos,
-  habilidades,
+  habilidades
 } from "./data/cvData";
 
 import CabeceraCV from "./components/CabeceraCV";
@@ -17,15 +17,14 @@ import StackTecnologias from "./components/StackTecnologias";
 import ToggleHabilidades from "./components/ToggleHabilidades";
 import FormularioTecnologia from "./components/FormularioTecnologia";
 import Proyectos from "./components/Proyectos";
-import Habilidades from "./components/Habilidades";
 
 function App() {
   const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
+
   const agregarTecnologia = (nueva) => {
     // Asegúrate de que nueva tiene { id, nombre, tipo }
     setTecnologias((prev) => [...prev, nueva]);
   };
-
   return (
     <div style={{ padding: 20 }}>
       <CabeceraCV
@@ -50,3 +49,4 @@ function App() {
 }
 
 export default App;
+

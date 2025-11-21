@@ -26,13 +26,13 @@ export const educacion = [
     id: 1,
     titulo: "Tecnólogo en Desarrollo de Software",
     institucion: "SENA",
-    periodo: "2022 - 2024",
+    año: "2022 - 2024",
   },
   {
     id: 2,
     titulo: "Curso de React",
     institucion: "Udemy",
-    periodo: "2024",
+    año: "2024",
   },
 ];
 
